@@ -1,6 +1,4 @@
-# Project Title
-
-AI Guardians: The Ethics Adventure
+# AI Guardians: The Ethics Adventure
 
 ## Overview
 
