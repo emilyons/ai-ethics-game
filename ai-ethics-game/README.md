@@ -105,7 +105,333 @@ to be added soon
 
 ### Endpoints
 
-to be added soon
+User Authentication and Management
+**POST /api/register*
+
+- Register a new user (either a child or an adult managing child account(s))
+
+Parameters:
+username: User-provided name to be used at login
+password: User-provided password to be used at login
+role: Child or parent/teacher
+name: full name of user
+profile_image: optional URL or identifier for profile picture
+
+
+Response:
+```
+{ 
+"success": true, 
+"user_id": 123 
+}
+
+```
+**POST api/login**
+
+- Authenticate a user and return a token
+
+Parameters:
+username
+password
+
+Response:
+```
+{
+  "success": true,
+  "token": "jwt-token-here"
+}
+```
+
+
+**POST api/logout**
+
+- Log out the user and invalidate the token
+
+Parameters:
+token
+
+Response:
+```
+{ 
+"success": true 
+}
+```
+
+
+LEARNER MANAGEMENT
+
+**POST /api/learners**
+
+- Create a new learner account under a parent/teacher account
+
+Parameters:
+user_id
+learner_name
+pw_pic_item_1_id
+pw_pic_item_2_id
+pw_pic_item_3_id
+
+Response:
+```
+{
+  "success": true,
+  "learner_id": 456
+}
+
+```
+
+**GET /api/learners**
+
+- Logged in user can get all learner accounts under their parent/teacher account
+
+Parameters:
+- user_id
+
+Response:
+```
+{
+  "success": true,
+  "learners": [
+    {
+      "learner_id": 456,
+      "learner_name": "John Doe"
+    },
+    {
+      "learner_id": 457,
+      "learner_name": "Jane Doe"
+    }
+  ]
+}
+
+```
+
+**DELETE /api/learners/{learner_id}**
+
+- Delete a learner account
+
+Parameters:
+learner_id
+
+Response:
+```
+{
+  "success": true,
+}
+
+```
+
+PROGRESS AND ACTIVITIES
+
+
+
+**GET /api/progress**
+
+- Get the game progress for a learner
+
+Parameters:
+
+- learner_id
+
+Response:
+```
+{
+  "success": true,
+  "progress": [
+    {
+      "chapter_id": 1,
+      "activity_id": 1,
+      "status": "completed",
+      "achievement_id": null,
+      "completion_time": "2024-07-10T10:00:00Z"
+    },
+    {
+      "chapter_id": 1,
+      "activity_id": 2,
+      "status": "in-progress",
+      "achievement_id": null,
+      "completion_time": null
+    }
+  ]
+}
+
+```
+
+**POST /api/progress**
+
+Update game progress for a learner.
+
+Parameters:
+-{ "learner_id": 456, "chapter_id": 1, "activity_id": 2, "status": "completed", "achievement_id": null, "completion_time": "2024-07-10T10:15:00Z" }
+
+Response:
+```
+{
+  "success": true
+}
+```
+
+ACTIVITIES AND RESULTS
+
+
+
+**GET /api/activities**
+
+- Get a list of activities for a specific chapter
+
+Parameters:
+
+- chapter_id
+
+Response:
+```
+{
+  "success": true,
+  "activities": [
+    {
+      "activity_id": 1,
+      "activity_type": "quiz",
+      "content": "Text content or quiz questions"
+    },
+    {
+      "activity_id": 2,
+      "activity_type": "interactive_game",
+      "content": "Text content or game instructions"
+    }
+  ]
+}
+
+```
+
+
+
+**POST /api/activities/submit**
+
+- Submit responses for an activity
+
+Parameters:
+
+learner_id
+activity_id
+response
+
+Response:
+```
+{
+  "success": true,
+  "score": 85,
+  "feedback": "Good job! You answered most of the questions correctly."
+}
+
+```
+
+**GET /api/results**
+
+- Get activity results
+
+Parameters:
+
+learner_id
+activity_id
+
+
+Response:
+```
+{
+  "success": true,
+  "results": {
+    "score": 85,
+    "response": "User's response or answers",
+    "completion_time": "2024-07-10T10:15:00Z"
+  }
+}
+```
+
+ACHIEVEMENTS
+
+**GET /api/achievements**
+
+- Retrieve all possible achievements
+
+Parameters:
+n/a
+
+Response:
+```
+{
+  "success": true,
+  "achievements": [
+    {
+      "achievement_id": 1,
+      "title": "First Steps",
+      "description": "Complete the first activity",
+      "image": "url_to_image"
+    },
+    {
+      "achievement_id": 2,
+      "title": "Quiz Master",
+      "description": "Score 100% on a quiz",
+      "image": "url_to_image"
+    }
+  ]
+}
+
+```
+
+**GET /api/achievements/earned**
+
+- Retrieve achievements earned by a learner
+
+Parameters:
+- learner_id
+
+Response:
+```
+{
+  "success": true,
+  "earned_achievements": [
+    {
+      "achievement_id": 1,
+      "title": "First Steps",
+      "description": "Complete the first activity",
+      "image": "url_to_image",
+      "earned_date": "2024-07-10T10:00:00Z"
+    }
+  ]
+}
+```
+
+
+
+SUPPORTING ENDPOINTS
+
+**GET /api/pw_pic_items**
+
+- Retrieve all available picture items for the picture-based password system.
+
+Parameters:
+- n/a
+
+Response:
+```
+{
+  "success": true,
+  "pw_pic_items": [
+    {
+      "pw_pic_item_id": 1,
+      "name": "cat",
+      "image": "url_to_cat_image",
+      "type": "animal"
+    },
+    {
+      "pw_pic_item_id": 2,
+      "name": “dark blue",
+      "image": “url_to_dark_blue_image",
+      "type": "color"
+    }
+  ]
+}
+
+```
 
 ### Auth
 
