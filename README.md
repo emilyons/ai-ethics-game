@@ -101,7 +101,7 @@ to be added soon
 
 ### Data
 
-![sqldiagram](ai-ethics-game/src/assets/ai_guardians_sql_diagram.png)
+![sqldiagram](ai-ethics-game/src/assets/ai_guardians_sql_diagram.png) 
 
 ### Endpoints
 
