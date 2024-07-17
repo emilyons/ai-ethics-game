@@ -27,8 +27,6 @@ Grown-ups (Teachers or Parents):
 
 ### Features
 
-(My question: How can I differentiate between different users where there are multiple types of users who benefit from different features?)
-
 Kids:
 
 - As a user, I want to feel like I’m playing a fun game
@@ -102,6 +100,11 @@ to be added soon
 ### Data
 
 ![sqldiagram](ai-ethics-game/src/assets/ai_guardians_sql_diagram.png) 
+
+Educational Content:
+- Ideas are located on the [AI Guardians Curriculum Plan](https://docs.google.com/document/d/1-MQfMdrSQoLsBpA95X9B_gu-AXDe4tl9xJToVu8JcD8/edit?usp=sharing) (Google Doc), collected as part of a potential document to share with experts when seeking expert content reviews.
+- Initial idea plans have also been added to this repository in the [game planning folder](https://github.com/ekerby/ai-ethics-game/tree/main/game-planning).
+- Not all ideas are expected to be used. Some may be suggested in supplemental material for parents or teachers, or discarded.
 
 ### Endpoints
 
@@ -445,3 +448,4 @@ to be added soon
 
 - Separate teacher login to set up and manage accounts for a class
 - picture password option to help kids remember their passwords
+- more immersive game experiences
