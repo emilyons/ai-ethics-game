@@ -1,12 +1,16 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import './App.css'
+import HomePage from "./pages/HomePage";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    </>
+    <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="about" element={<AboutPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
