@@ -21,3 +21,10 @@
 - Algorithm Adjustment Game: Kids adjust parameters of an AI algorithm to achieve fair outcomes. For example, they might tweak the settings of a hiring algorithm to ensure it does not favor one group over another.
 - Inclusivity Design Challenge: Kids design an AI system or app with inclusivity in mind, considering various user needs and perspectives.
 - Real-World Case Studies: Interactive case studies where kids analyze real-world examples of AI fairness and inclusivity issues and propose solutions.
+
+**Affirmations:**
+I strive to make sure everyone is treated fairly by technology.
+I can help build AI that includes and respects all people.
+I believe that diverse ideas make AI smarter and fairer.
+I work to create technology that benefits everyone, no matter who they are.
+I am committed to making fair decisions that help build a better world.

@@ -22,3 +22,10 @@
 - Bias Source Hunt: Kids analyze datasets used to train AI models and identify potential sources of bias. They might examine demographic data and highlight areas where certain groups are over- or under-represented.
 - Bias Mitigation Challenge: Kids apply techniques to reduce bias in a given AI system. They might adjust a biased hiring algorithm and see how their changes affect the outcomes.
 - Impact Stories: Interactive stories where kids learn about individuals or communities affected by biased AI. This can help them understand the real-world implications of AI bias.
+
+**Affirmations:**
+I can spot bias and work to make AI fair for everyone.
+I understand that fair data leads to fair decisions.
+I stand up for fairness in technology and in life.
+I can help make AI systems that respect everyone’s rights.
+I believe that everyone deserves fair treatment from technology.

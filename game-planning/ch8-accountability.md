@@ -38,3 +38,9 @@
 - Ethical AI Design: Discuss the broader principles of designing AI systems ethically, including considerations for user privacy and consent.
 - Case Studies of Successful Accountability: Analyze real-world examples where AI accountability has been successfully implemented.
 
+**Affirmations:**
+I believe in the power of transparency to build trust.
+I am responsible for ensuring AI systems are fair and accountable.
+I use my knowledge to hold technology to the highest ethical standards.
+I can evaluate AI systems to make sure they are fair to everyone.
+I stand up for accountability in technology and beyond.

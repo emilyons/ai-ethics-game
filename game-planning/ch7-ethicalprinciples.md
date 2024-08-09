@@ -21,3 +21,10 @@
 - Principles Match-Up: A matching game where kids pair ethical principles (e.g., transparency, accountability) with their definitions and examples. This activity reinforces their understanding of ethical AI concepts.
 - Role-Playing Scenarios: Kids role-play as different stakeholders (e.g., AI developers, users, policymakers) to understand diverse perspectives in ethical AI decision-making.
 - Interactive Case Study Analysis: A more detailed analysis of a specific case study where kids can explore different outcomes based on the ethical decisions made.
+
+**Affirmations:**
+I am an ethical leader, making decisions that benefit everyone.
+I understand the importance of transparency in AI and in life.
+I hold myself and others accountable for creating fair technology.
+I am committed to using AI in ways that are fair and just.
+I make choices that reflect my values of honesty and integrity.

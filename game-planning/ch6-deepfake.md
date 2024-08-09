@@ -20,3 +20,10 @@
 - Real or Fake Quiz: A quiz where kids analyze various media (photos, videos, audio clips) and decide if they are real or fake. This activity teaches them to critically evaluate digital content.
 - Create a Deepfake: A guided activity where kids create a simple, harmless deepfake (e.g., swapping faces in a photo) to understand the technology behind it. This should be done under strict supervision and with ethical guidelines.
 - Deepfake Debate: An activity where kids debate the ethical implications of deepfakes, discussing scenarios where deepfakes might be used for both positive and negative purposes.
+
+**Affirmations:**
+I can spot a deepfake and understand its impact on others.
+I am committed to using technology responsibly and ethically.
+I protect the truth by learning to identify fake content.
+I understand that creating and sharing deepfakes can harm others.
+I choose to use AI in ways that build trust and integrity.

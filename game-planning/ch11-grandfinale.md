@@ -17,3 +17,10 @@
 - Summary Challenge: A comprehensive challenge that tests all the concepts learned throughout the game. Kids solve complex scenarios requiring the application of multiple lessons from the game.
 - Final Boss Battle: An interactive boss battle against "The Ethics Enforcer," where kids must answer questions and solve challenges based on previous lessons to defeat the boss and save Techville. They face scenarios covering all key topics, such as identifying biases, verifying information, and making ethical decisions.
 - Real-World Impact: Discuss how the ethical principles learned can be applied to real-world situations outside of AI.
+
+**Affirmations:**
+I am ready to use everything I’ve learned to create a better world.
+I am confident in my ability to make ethical choices with AI.
+I have the knowledge to shape the future of technology.
+I am a guardian of fairness, truth, and responsibility.
+I am prepared to make a positive impact with what I know.

@@ -21,3 +21,9 @@
 - Source Reliability Quiz: A quiz where kids evaluate the reliability of various sources, learning to identify credible sources of information.
 - Interactive Fact-Checking Tutorial: A guided tutorial that takes kids through the steps of fact-checking a news story, providing hands-on practice with real examples.
 
+**Affirmations:**
+I am a truth seeker, and I question what I see online.
+I have the power to spot misinformation and stop it from spreading.
+I use my critical thinking to verify what’s true and what’s not.
+I rely on facts and evidence to guide my decisions.
+I can protect others by sharing only accurate, trustworthy information.

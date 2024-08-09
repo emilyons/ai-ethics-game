@@ -33,3 +33,25 @@ https://robots.media.mit.edu/wp-content/uploads/sites/7/2019/08/Constructionism_
 
 10. Ethical guidelines for AI in education: Starting a conversation
     https://www.researchgate.net/profile/Richard-Epstein-8/publication/228600407_Ethical_guidelines_for_AI_in_education_Starting_a_conversation/links/5523ef290cf2c815e073e5b0/Ethical-guidelines-for-AI-in-education-Starting-a-conversation.pdf
+
+11. An ethics of artificial intelligence curriculum for middle school students
+
+https://thecenter.mit.edu/wp-content/uploads/2020/07/MIT-AI-Ethics-Education-Curriculum.pdf
+
+12. Emotional artificial intelligence in children's toys and devices: Ethics, governance and practical remedies
+
+https://journals.sagepub.com/doi/abs/10.1177/2053951721994877
+
+13. More Than "If Time Allows": The Role of Ethics in AI Education
+    https://dl.acm.org/doi/abs/10.1145/3375627.3375868
+
+14. Integrating Ethics and Career Futures with Technical Learning to Promote AI Literacy for Middle School Students: An Exploratory Study
+    https://link.springer.com/article/10.1007/s40593-022-00293-3
+
+15. Adventure in AI Project (2AI): Promoting AI Knowledge for Kids Aged 7–12 Using Gaming
+    https://link.springer.com/chapter/10.1007/978-3-031-56075-0_29
+
+16. *** Envisioning AI for K-12: What Should Every Child Know about AI?
+https://ojs.aaai.org/index.php/AAAI/article/view/5053
+
+

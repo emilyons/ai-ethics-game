@@ -25,3 +25,10 @@
 - Phishing Detective Game: A spot-the-difference style game where kids identify phishing attempts in emails and messages. They learn to recognize signs of phishing, such as suspicious links or requests for personal information, by comparing legitimate messages with fraudulent ones.
 - Password Strength Tester: An interactive tool where kids create passwords and receive feedback on their strength, learning how to improve them.
 - Privacy Settings Quiz: A quiz that guides kids through setting up privacy controls on social media or gaming accounts, teaching them how to protect their personal information online.
+
+**Affirmations:**
+I am in control of my personal information and protect it with care.
+I understand the importance of keeping my passwords strong and secure.
+I can recognize and avoid traps that threaten my privacy.
+I only share what is necessary to keep my personal data safe.
+I am building a positive digital footprint by making smart choices online.

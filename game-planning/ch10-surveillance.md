@@ -21,3 +21,10 @@
 - Ethical Scenarios: Engaging activities where kids explore the ethical considerations of AI surveillance through interactive stories and decision-making exercises.
 - Surveillance Simulation: A simulation where kids experience the role of both the observer and the observed, understanding the perspectives of both sides.
 - Privacy Policy Workshop: An activity where kids create a privacy policy for a fictional company, learning how to balance surveillance needs with privacy rights.
+
+**Affirmations:**
+I value privacy and understand how to protect it.
+I question how technology is used and stand up for what is right.
+I believe that everyone deserves privacy, even in a digital world.
+I can balance security and privacy in the use of technology.
+I am committed to ensuring AI respects the rights of all people.

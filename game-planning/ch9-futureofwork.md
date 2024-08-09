@@ -20,3 +20,10 @@
 - Job Market Simulation: A simulation game where kids make strategic decisions in an AI-influenced job market. They decide which skills to learn and which industries to enter, understanding the evolving job landscape.
 - Career Exploration Workshop: A workshop where kids explore various AI-related careers through interactive activities and guest speakers from different industries.
 - Skills Development Challenge: An activity where kids identify and develop specific skills (e.g., coding, data analysis) through hands-on projects and challenges.
+
+**Affirmations:**
+I am preparing for the future by learning new skills today.
+I can adapt to changes and succeed in an AI-driven world.
+I see how AI can create new opportunities in the world of work.
+I am learning to be a leader in the jobs of tomorrow.
+I build a bright future by staying curious and open to new ideas.
