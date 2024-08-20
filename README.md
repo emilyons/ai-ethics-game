@@ -99,7 +99,7 @@ to be added soon
 
 ### Data
 
-![sqldiagram](ai-ethics-game/src/assets/ai_guardians_sql_diagram.png) 
+![sqldiagram](./src/assets/ai_guardians_sql_diagram.png) 
 
 Educational Content:
 - Ideas are located on the [AI Guardians Curriculum Plan](https://docs.google.com/document/d/1-MQfMdrSQoLsBpA95X9B_gu-AXDe4tl9xJToVu8JcD8/edit?usp=sharing) (Google Doc), collected as part of a potential document to share with experts when seeking expert content reviews.
