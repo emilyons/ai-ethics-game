@@ -1,0 +1,23 @@
+.nav {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background-color: #efefef;
+    &__list {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      gap: 2rem;
+    }
+    &__link {
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 1.2rem;
+      &.active {
+        background-color: #ff4365;
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+  
