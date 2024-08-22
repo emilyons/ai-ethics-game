@@ -1,0 +1,10 @@
+.logo {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25rem;
+  font-family: Arial, Helvetica, sans-serif;
+  &:link,
+  &:visited {
+    color: #ff4365;
+  }
+}
