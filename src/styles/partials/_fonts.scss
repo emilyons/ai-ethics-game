@@ -1,0 +1,47 @@
+//Fonts;
+@font-face {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700; 
+    src: url(/assets/fonts/Montserrat-Bold.woff) format("woff");
+    src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800; /* for extra-bold */
+    src: url(/assets/fonts/Montserrat-ExtraBold.woff) format("woff");
+    src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    src: url(/assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
+    src: url(/assets/fonts/Lato-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    src: url(/assets/fonts/Raleway-Medium.ttf) format("truetype");
+    src: url(/assets/fonts/AvenirNextLTProBold.ttf) format("truetype");
+  }
+  
+
+
+/* Headings and Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* or 800 for extra-bold */
+  }
+  
+  /* Body Text */
+  body, p, li {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+  /* Accents and Special Elements */
+  blockquote, q, .special-element {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
