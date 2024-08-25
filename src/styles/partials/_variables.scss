@@ -1,0 +1,76 @@
+// COLORS
+
+$color1: #5201ff; //Quantum Pulse
+$color1: #1602ff; //Neon Knight
+$color1: #00d9ce; //Vibrant Viper
+$color1: #0083a2; //Cobalt Circuit
+$color1: #00b3aa; //Electric Seafoam
+$color1: #7202ea; //Violet Vortex
+$color1: #9407d2; //Plasma Surge
+$color1: #d206bd; //Hyper Pink
+$color1: #d20656; //Crimson Blaze
+$color1: #8f8f8f; //Phoenix Ashes
+$color1: #2b2b2b; //Shadow Core
+$color1: #3f4140; //Steel Sentinel
+
+$altcolor1: #00a2c8; //Cobalt Circuit a
+$altcolor2: #13f28a; //Electric Seafoam a
+$altcolor3: #af08f8; //Plasma Surge a
+$altcolor4: #f807df; //Hyper Pink a
+$altcolor5: #f80766; //Crimson Blaze a
+
+$primary1: #3f4140; //Steel Sentinel: primary text color;
+$primary2: #5201ff; //Quantum Pulse: Primary CTA color.
+$primary3: #0083a2; //Cobalt Circuit: Active form field outline color; default outline; dividers
+$secondary1: #8f8f8f; //Phoenix Ashes: secondary text (subtitles, less prominent info, supporting details).
+
+$secondary3: #10cc74; //Electric Seafoam: hover state color;
+$secondary2: #1602ff; //Neon Knight: hover state form fields;
+// $secondary2: #3A92B0; //Deep Clarity Blue: CTA hover state color;
+// $secondary3: #50C29B; //Deep Progress Seafoam: hover state form fields;
+$error: #d20656; //Crimson Blaze: error outline;
+
+//-------
+$primary1: #5201FF;  // Quantum Pulse - Main CTA color
+$primary2: #3F4140;  // Steel Sentinel - Primary text color
+$primary3: #0083A2;  // Cobalt Circuit - Form outline and text label color
+
+$secondary1: #10CC74;  // Electric Seafoam - Hover state color
+$secondary2: #8F8F8F;  // Phoenix Ashes - Secondary text color
+$secondary3: #1602FF;  // Neon Knight - Form field hover state color
+$secondary4: #00B3AA;  // Vibrant Viper - Accent/Secondary CTA color
+$secondary5: #9407D2;  // Plasma Surge - Link/Highlight color
+$secondary6: #D206BD;  // Hyper Pink - Badge/Icon/Alert color
+
+$error: #D20656;  // Crimson Blaze - Error outline color
+
+$neutral: #2B2B2B;  // Shadow Core - Dark background/border/shadow color
+
+
+// Additional Colors
+
+// ----------------------
+
+$primary3: #afafaf;
+//Silver - secondary text color; text label color;
+$primary4: #ffffff;
+//White - Background color. CTA text color.;
+$secondary1: #000000;
+//BrainFlix-DarkBlack - Video player components.;
+$secondary3: #e1e1e1;
+//Mercury - Divider line. Form field outline. ;
+$secondary4: #fafafa;
+//Alabaster - Form field background color;
+
+// BREAKPOINTS
+
+$breakpoints: (
+  "tablet": 768px,
+  "desktop": 1280px,
+);
+
+// PADDING
+
+$pad-s: 1rem; // 16px mobile: after headlines, between components.
+$pad-m: 1.5rem; // 24px mobile: before headlines. desktop & tablet: after headlines, between components.
+$pad-l: 2.25rem; // 36px desktop & tablet: before headlines.
