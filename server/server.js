@@ -1,9 +1,13 @@
 import express from "express";
 import path from "path";
 import cors from "cors";
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;  // Change 5000 to 5001 or any other available port
 
 app.use(cors());
 app.use(express.json());
@@ -15,5 +19,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
