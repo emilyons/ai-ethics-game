@@ -163,15 +163,14 @@ const SortingGame = () => {
       <p className="correct-answers">
         Correct Answers: {CorrectAnswers} out of {initialTechItems.length}
       </p>
+      
+      {correctAnswers === initialTechItems.length && (
+  <button onClick={() => window.location.href = "/chapter2"}>
+    Proceed to Next Lesson
+  </button>
+)}
 
-      {CorrectAnswers === initialTechItems.length && (
-        <button
-          className="next-lesson-btn"
-          onClick={() => alert("Moving to next lesson...")}
-        >
-          Proceed to Next Lesson
-        </button>
-      )}
+
     </div>
   );
 };
