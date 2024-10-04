@@ -18,6 +18,7 @@ function App() {
         <Route path="about" element={<AboutPage />} />
         <Route path="resources" element={<ResourcesPage />} />
         <Route path="chapter1" element={<ChapterOne />} />
+        <Route path="chapter2" element={<ChapterTwo />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />

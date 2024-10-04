@@ -1,0 +1,26 @@
+.chapter-two {
+  .game-area {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .data-items,
+  .security-practices {
+    width: 45%;
+  }
+
+  .data-item {
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer;
+  }
+}

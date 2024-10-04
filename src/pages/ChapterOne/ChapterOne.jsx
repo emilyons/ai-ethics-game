@@ -29,10 +29,10 @@ const ChapterOne = () => {
       </ul>
       <h3>Ready for a challenge?</h3>
       <p>Let's sort out which technologies use AI and which ones don't.</p>
-      {isGameStarted ? (
-        <SortingGame />
-      ) : (
+      {!isGameStarted ? (
         <button onClick={handleStartGame}>Start Sorting Game</button>
+      ) : (
+        <SortingGame />
       )}
     </div>
   );

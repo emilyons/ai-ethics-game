@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState } from 'react';
+import './ChapterTwo.scss';
+import Ch2Game from '../../components/Ch2Game/Ch2Game';     
+
+
 
 const ChapterTwo = () => {
   return (

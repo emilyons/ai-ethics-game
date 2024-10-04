@@ -164,7 +164,7 @@ const SortingGame = () => {
         Correct Answers: {CorrectAnswers} out of {initialTechItems.length}
       </p>
       
-      {correctAnswers === initialTechItems.length && (
+      {CorrectAnswers === initialTechItems.length && (
   <button onClick={() => window.location.href = "/chapter2"}>
     Proceed to Next Lesson
   </button>
