@@ -107,7 +107,7 @@ const SortingGame = () => {
         draggable
         onDragStart={(e) => onDragStart(e, item.id, source)}
       >
-        <img src={item.img} alt={item.name} />
+        <img src={item.image} alt={item.name} />
         <p>{item.name}</p>
       </div>
     ));
