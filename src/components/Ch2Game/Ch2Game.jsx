@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Ch2Game.scss";
 
 const dataItems = [
@@ -15,7 +15,7 @@ const securityPractices = [
   "Never Share Online",
 ];
 
-const ChapterTwo = () => {
+const Ch2Game = () => {
   const [matchedItems, setMatchedItems] = useState({});
   const [correctAnswers, setCorrectAnswers] = useState(0);
 
@@ -27,36 +27,57 @@ const ChapterTwo = () => {
     }
   };
 
+  const onDragStart = (e, dataItem) => {
+    e.dataTransfer.setData("dataItem", JSON.stringify(dataItem));
+  };
+
+  const onDrop = (e, practice) => {
+    e.preventDefault();
+    const dataItem = JSON.parse(e.dataTransfer.getData("dataItem"));
+    handleMatch(dataItem, practice);
+  };
+
+  const onDragOver = (e) => {
+    e.preventDefault();
+  };
+
+  useEffect(() => {
+    console.log("Ch2Game component mounted");
+  }, []);
+
+  console.log("Rendering Ch2Game component");
+
   return (
-    <div className="chapter-two">
-      <h1>Chapter 2: The Data Dilemma</h1>
-      <p>
-        Learn how to protect your personal data by matching data items to their best security practices!
-      </p>
+    <div className="game-area" style={{ padding: '20px', border: '1px solid #ccc' }}>
+      <h1>Chapter Two Game</h1>
+      <div className="data-items">
+        <h2>Data Items</h2>
+        {dataItems.map((item) => (
+          <div
+            key={item.id}
+            className="data-item"
+            draggable
+            onDragStart={(e) => onDragStart(e, item)}
+            style={{ margin: '10px', padding: '5px', border: '1px solid #000', display: 'inline-block' }}
+          >
+            {item.name}
+          </div>
+        ))}
+      </div>
 
-      <div className="game-area">
-        <div className="data-items">
-          <h2>Data Items</h2>
-          {dataItems.map((item) => (
-            <div key={item.id} className="data-item">
-              {item.name}
-            </div>
-          ))}
-        </div>
-
-        <div className="security-practices">
-          <h2>Security Practices</h2>
-          {securityPractices.map((practice, index) => (
-            <button
-              key={index}
-              onClick={() =>
-                handleMatch(dataItems[correctAnswers], practice)
-              }
-            >
-              {practice}
-            </button>
-          ))}
-        </div>
+      <div className="security-practices">
+        <h2>Security Practices</h2>
+        {securityPractices.map((practice, index) => (
+          <div
+            key={index}
+            className="practice-drop-zone"
+            onDrop={(e) => onDrop(e, practice)}
+            onDragOver={(e) => e.preventDefault()} // Allow drop by preventing default behavior
+            style={{ margin: '10px', padding: '5px', border: '1px dashed #000', minHeight: '30px' }}
+          >
+            {practice}
+          </div>
+        ))}
       </div>
 
       <p>Correct Answers: {correctAnswers} out of {dataItems.length}</p>
@@ -70,5 +91,5 @@ const ChapterTwo = () => {
   );
 };
 
-export default ChapterTwo;
+export default Ch2Game;
 

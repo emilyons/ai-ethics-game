@@ -7,6 +7,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ResourcesPage from "./pages/ResourcesPage/ResourcesPage";
 import ChapterOne from "./pages/ChapterOne/ChapterOne";
 import ChapterTwo from "./pages/ChapterTwo/ChapterTwo";
+
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
@@ -20,6 +21,10 @@ function App() {
         <Route path="resources" element={<ResourcesPage />} />
         <Route path="chapter1" element={<ChapterOne />} />
         <Route path="chapter2" element={<ChapterTwo />} />
+        <Route path="chapter2/password-basics" element={<PasswordBasics />} />
+        <Route path="chapter2/build-password" element={<BuildPassword />} />
+        <Route path="chapter2/data-dilemma" element={<DataDilemma />} />
+        
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
