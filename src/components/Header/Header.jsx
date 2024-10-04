@@ -5,8 +5,8 @@ import "./Header.scss";
 
 const Header = () => {
   return (
-    <header>
-      <Link className="logo" to="/">
+    <header className="header">
+      <Link className="header__logo" to="/">
         AI Guardians: Adventures in Ethics
       </Link>
       <Nav />

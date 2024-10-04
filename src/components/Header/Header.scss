@@ -1,15 +1,24 @@
+@import '../../styles/partials/variables';
+@import '../../styles/partials/fonts';
+
 header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-}
-.logo {
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 2rem;
-  font-family: Arial, Helvetica, sans-serif;
-  align-items: left;
-  &:link,
-  &:visited {
-    color: #ff4365;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__logo {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: $primary2;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darken($primary2, 10%);
+    }
   }
 }
