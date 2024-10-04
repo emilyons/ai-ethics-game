@@ -1,0 +1,80 @@
+// Define some variables for easy color and font management
+$primary-color: #4caf50;
+$secondary-color: #222;
+$background-color: #f8f9fa;
+$font-color: #333;
+$font-family: "Arial", sans-serif;
+
+// Global Styles
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $font-color;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+// Navigation styling (if needed later)
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+// Button styling
+button {
+  background-color: $primary-color;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block; // Make the button a block element
+  margin: 20px auto; // Center the button and add some vertical spacing
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: rgba(76, 175, 80, 0.9); // Slightly darkened green
+  opacity: 1; // Maintain visibility when hovered
+}
+
+h1,
+h2,
+p {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 1.5rem;
+}
+
+p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.chapter-container {
+  border: 2px solid #ddd;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
