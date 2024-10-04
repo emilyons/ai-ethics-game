@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ResourcesPage from "./pages/ResourcesPage/ResourcesPage";
 import ChapterOne from "./pages/ChapterOne/ChapterOne";
+import ChapterTwo from "./pages/ChapterTwo/ChapterTwo";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 

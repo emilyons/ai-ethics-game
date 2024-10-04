@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ChapterTwo.scss";
+import "./Ch2Game.scss";
 
 const dataItems = [
   { id: 1, name: "Password", answer: "Strong Password" },
