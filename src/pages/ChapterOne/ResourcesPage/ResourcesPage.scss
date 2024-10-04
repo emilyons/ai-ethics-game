@@ -1,0 +1,85 @@
+@import '../../../styles/partials/variables';
+@import '../../../styles/partials/fonts';
+
+.resources {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  &__title {
+    color: $primary1;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    color: $secondary2;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__item-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+
+    a {
+      color: $primary1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $secondary5;
+      }
+    }
+  }
+
+  &__item-description {
+    color: $secondary2;
+    font-size: 1rem;
+  }
+
+  &__more-info {
+    margin-top: 2rem;
+    text-align: center;
+
+    h3 {
+      color: $primary2;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $secondary2;
+      font-size: 1.1rem;
+
+      a {
+        color: $primary1;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $secondary5;
+        }
+      }
+    }
+  }
+}

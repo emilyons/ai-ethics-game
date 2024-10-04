@@ -4,8 +4,8 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import ResourcesPage from "./pages/ResourcesPage";
-import ChapterOne from "./pages/ChapterOne";
+import ResourcesPage from "./pages/ChapterOne/ResourcesPage/ResourcesPage";
+import ChapterOne from "./pages/ChapterOne/ChapterOne";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 

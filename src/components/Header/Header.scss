@@ -1,7 +1,7 @@
 @import '../../styles/partials/variables';
 @import '../../styles/partials/fonts';
 
-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,11 +14,35 @@ header {
     font-weight: bold;
     font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
-    color: $primary2;
+    color: $primary1;
     transition: color 0.3s ease;
 
     &:hover {
-      color: darken($primary2, 10%);
+      color: $secondary5;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $primary2;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover, &.active {
+      background-color: $primary1;
+      color: white;
     }
   }
 }
