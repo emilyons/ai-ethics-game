@@ -1,37 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SortingGame.scss";
 
-const initialTechItems = [
-  {
-    id: 1,
-    name: "Smart Speaker",
-    isAI: true,
-    img: "/images/smart-speaker.png",
-  },
-  {
-    id: 2,
-    name: "Calculator",
-    isAI: false,
-    img: "src/assets/images/calculator.svg",
-  },
-  {
-    id: 3,
-    name: "Self-Driving Car",
-    isAI: true,
-    img: "src/assets/images/self-driving-car.svg",
-  },
-  { id: 4, name: "Microwave", isAI: false, img: "/images/microwave.png" },
-  { id: 5, name: "Chatbot", isAI: true, img: "/images/chatbot.png" },
-];
-
 const SortingGame = () => {
-  const [items, setItems] = useState(initialTechItems);
+  const [items, setItems] = useState([]);
   const [aiItems, setAiItems] = useState([]);
   const [nonAiItems, setNonAiItems] = useState([]);
+  const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [initialTechItems, setInitialTechItems] = useState([]);
+
+  useEffect(() => {
+    // Initialize your items here
+    const techItems = [
+      {
+        id: 1,
+        name: "Smart Speaker",
+        image: "src/assets/images/smart-speaker-3.jpeg",
+        isAI: true,
+      },
+      {
+        id: 2,
+        name: "Calculator",
+        image: "src/assets/images/calculator.svg",
+        isAI: false,
+      },
+      {
+        id: 3,
+        name: "Microwave",
+        image: "src/assets/images/microwave_PNG15726.png",
+        isAI: false,
+      },
+      {
+        id: 4,
+        name: "Chatbot",
+        image: "src/assets/images/graident-ai-robot-vectorart_78370-4114.avif",
+        isAI: true,
+      },
+      {
+        id: 5,
+        name: "Self-driving Car",
+        image: "src/assets/images/self-driving-car.svg",
+        isAI: true,
+      },
+      // Add more items as needed
+    ];
+    setItems(techItems);
+    setInitialTechItems(techItems);
+  }, []);
 
   const onDragStart = (e, id, source) => {
     e.dataTransfer.setData("id", id);
     e.dataTransfer.setData("source", source);
+  };
+
+  const onDragOver = (e) => {
+    e.preventDefault();
   };
 
   const onDrop = (e, target) => {
@@ -39,10 +61,7 @@ const SortingGame = () => {
     const id = e.dataTransfer.getData("id");
     const source = e.dataTransfer.getData("source");
 
-    let item;
-    let sourceArray;
-    let setSourceArray;
-
+    let sourceArray, setSourceArray;
     if (source === "items") {
       sourceArray = items;
       setSourceArray = setItems;
@@ -54,23 +73,30 @@ const SortingGame = () => {
       setSourceArray = setNonAiItems;
     }
 
-    item = sourceArray.find((item) => item.id.toString() === id);
+    let item = sourceArray.find((item) => item.id.toString() === id);
 
     if (item) {
       setSourceArray(sourceArray.filter((i) => i.id.toString() !== id));
 
       if (target === "items") {
         setItems([...items, item]);
+        setFeedbackMessage(""); // Clear feedback when moving back to items
       } else if (target === "AI") {
         setAiItems([...aiItems, item]);
+        if (item.isAI) {
+          setFeedbackMessage(`Correct! ${item.name} is AI.`);
+        } else {
+          setFeedbackMessage(`Oops! ${item.name} is not AI.`);
+        }
       } else {
         setNonAiItems([...nonAiItems, item]);
+        if (!item.isAI) {
+          setFeedbackMessage(`Correct! ${item.name} is Non-AI.`);
+        } else {
+          setFeedbackMessage(`Oops! ${item.name} is actually AI.`);
+        }
       }
     }
-  };
-
-  const onDragOver = (e) => {
-    e.preventDefault();
   };
 
   const renderItems = (itemList, source) => {
@@ -87,7 +113,7 @@ const SortingGame = () => {
     ));
   };
 
-  const correctAnswers =
+  const CorrectAnswers =
     aiItems.filter((item) => item.isAI).length +
     nonAiItems.filter((item) => !item.isAI).length;
 
@@ -98,6 +124,8 @@ const SortingGame = () => {
         Drag each item into the correct category: AI or Non-AI. You can move
         items between categories or back to the original list.
       </p>
+
+      {feedbackMessage && <p className="feedback-message">{feedbackMessage}</p>}
 
       <div className="game-area">
         <div
@@ -133,8 +161,17 @@ const SortingGame = () => {
       </div>
 
       <p className="correct-answers">
-        Correct Answers: {correctAnswers} out of {initialTechItems.length}
+        Correct Answers: {CorrectAnswers} out of {initialTechItems.length}
       </p>
+
+      {CorrectAnswers === initialTechItems.length && (
+        <button
+          className="next-lesson-btn"
+          onClick={() => alert("Moving to next lesson...")}
+        >
+          Proceed to Next Lesson
+        </button>
+      )}
     </div>
   );
 };
