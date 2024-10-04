@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PasswordStrengthMeter from '../components/PasswordStrengthMeter';
+import PasswordStrengthMeter from '../../../components/PasswordStrengthMeter/PasswordStrengthMeter';
 import { Link } from 'react-router-dom';
 
 const BuildPassword = () => {
