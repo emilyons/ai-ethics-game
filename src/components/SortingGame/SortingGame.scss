@@ -46,11 +46,24 @@
     margin: 10px 0;
     cursor: move;
     transition: all 0.3s ease;
+    text-align: center;
 
     &:hover {
       background-color: #e0e0e0;
       transform: translateY(-2px);
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
     }
   }
 

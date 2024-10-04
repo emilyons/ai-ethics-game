@@ -2,13 +2,27 @@ import React, { useState } from "react";
 import "./SortingGame.scss";
 
 const initialTechItems = [
-    { id: 1, name: "Smart Speaker", isAI: true, img: "/images/smart-speaker.png" },
-    { id: 2, name: "Calculator", isAI: false, img: "/images/calculator.png" },
-    { id: 3, name: "Self-Driving Car", isAI: true, img: "/images/self-driving-car.png" },
-    { id: 4, name: "Microwave", isAI: false, img: "/images/microwave.png" },
-    { id: 5, name: "Chatbot", isAI: true, img: "/images/chatbot.png" },
-  ];
-  
+  {
+    id: 1,
+    name: "Smart Speaker",
+    isAI: true,
+    img: "/images/smart-speaker.png",
+  },
+  {
+    id: 2,
+    name: "Calculator",
+    isAI: false,
+    img: "src/assets/images/calculator.svg",
+  },
+  {
+    id: 3,
+    name: "Self-Driving Car",
+    isAI: true,
+    img: "src/assets/images/self-driving-car.svg",
+  },
+  { id: 4, name: "Microwave", isAI: false, img: "/images/microwave.png" },
+  { id: 5, name: "Chatbot", isAI: true, img: "/images/chatbot.png" },
+];
 
 const SortingGame = () => {
   const [items, setItems] = useState(initialTechItems);
@@ -24,7 +38,7 @@ const SortingGame = () => {
     e.preventDefault();
     const id = e.dataTransfer.getData("id");
     const source = e.dataTransfer.getData("source");
-    
+
     let item;
     let sourceArray;
     let setSourceArray;
@@ -40,11 +54,11 @@ const SortingGame = () => {
       setSourceArray = setNonAiItems;
     }
 
-    item = sourceArray.find(item => item.id.toString() === id);
-    
+    item = sourceArray.find((item) => item.id.toString() === id);
+
     if (item) {
-      setSourceArray(sourceArray.filter(i => i.id.toString() !== id));
-      
+      setSourceArray(sourceArray.filter((i) => i.id.toString() !== id));
+
       if (target === "items") {
         setItems([...items, item]);
       } else if (target === "AI") {
@@ -68,20 +82,25 @@ const SortingGame = () => {
         onDragStart={(e) => onDragStart(e, item.id, source)}
       >
         <img src={item.img} alt={item.name} />
+        <p>{item.name}</p>
       </div>
     ));
   };
 
-  const correctAnswers = aiItems.filter(item => item.isAI).length + 
-                         nonAiItems.filter(item => !item.isAI).length;
+  const correctAnswers =
+    aiItems.filter((item) => item.isAI).length +
+    nonAiItems.filter((item) => !item.isAI).length;
 
   return (
     <div className="sorting-game">
       <h2>Sort the Technologies</h2>
-      <p>Drag each item into the correct category: AI or Non-AI. You can move items between categories or back to the original list.</p>
+      <p>
+        Drag each item into the correct category: AI or Non-AI. You can move
+        items between categories or back to the original list.
+      </p>
 
       <div className="game-area">
-        <div 
+        <div
           className="items"
           onDrop={(e) => onDrop(e, "items")}
           onDragOver={onDragOver}
@@ -91,7 +110,7 @@ const SortingGame = () => {
         </div>
 
         <div className="categories">
-          <div 
+          <div
             className="ai-category"
             onDrop={(e) => onDrop(e, "AI")}
             onDragOver={onDragOver}
@@ -101,7 +120,7 @@ const SortingGame = () => {
             {renderItems(aiItems, "AI")}
           </div>
 
-          <div 
+          <div
             className="non-ai-category"
             onDrop={(e) => onDrop(e, "Non-AI")}
             onDragOver={onDragOver}
@@ -113,7 +132,9 @@ const SortingGame = () => {
         </div>
       </div>
 
-      <p className="correct-answers">Correct Answers: {correctAnswers} out of {initialTechItems.length}</p>
+      <p className="correct-answers">
+        Correct Answers: {correctAnswers} out of {initialTechItems.length}
+      </p>
     </div>
   );
 };
