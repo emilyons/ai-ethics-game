@@ -3,7 +3,7 @@ import './ChapterTwo.scss';
 import { Link } from 'react-router-dom';
 import Ch2Game from '../../components/Ch2Game/Ch2Game'; 
 import { useNavigate } from 'react-router-dom';
-
+import DataDilemma from './DataDilemma/DataDilemma';
 
 const ChapterTwo = () => {
   const navigate = useNavigate();
