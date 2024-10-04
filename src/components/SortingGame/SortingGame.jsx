@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./SortingGame.scss";
 
 // Example technologies
 const techItems = [
@@ -10,12 +11,31 @@ const techItems = [
 ];
 
 const SortingGame = () => {
+  const [items, setItems] = useState(techItems);
+  const [aiItems, setAiItems] = useState([]);
+  const [nonAiItems, setNonAiItems] = useState([]);
   const [correctAnswers, setCorrectAnswers] = useState(0);
 
-  const handleSort = (item, isAI) => {
-    if (item.isAI === isAI) {
-      setCorrectAnswers(correctAnswers + 1);
+  const onDragStart = (e, id) => {
+    e.dataTransfer.setData("id", id);
+  };
+
+  const onDrop = (e, category) => {
+    let id = e.dataTransfer.getData("id");
+    let item = items.find(item => item.id.toString() === id);
+    
+    if (item) {
+      if ((category === "AI" && item.isAI) || (category === "Non-AI" && !item.isAI)) {
+        setCorrectAnswers(prev => prev + 1);
+      }
+      
+      setItems(items.filter(item => item.id.toString() !== id));
+      category === "AI" ? setAiItems([...aiItems, item]) : setNonAiItems([...nonAiItems, item]);
     }
+  };
+
+  const onDragOver = (e) => {
+    e.preventDefault();
   };
 
   return (
@@ -25,11 +45,12 @@ const SortingGame = () => {
 
       <div className="game-area">
         <div className="items">
-          {techItems.map((item) => (
+          {items.map((item) => (
             <div
               key={item.id}
               className="tech-item"
-              onClick={() => handleSort(item, true)}
+              draggable
+              onDragStart={(e) => onDragStart(e, item.id)}
             >
               {item.name}
             </div>
@@ -37,14 +58,24 @@ const SortingGame = () => {
         </div>
 
         <div className="categories">
-          <div className="ai-category">
+          <div 
+            className="ai-category"
+            onDrop={(e) => onDrop(e, "AI")}
+            onDragOver={onDragOver}
+          >
             <h3>AI</h3>
             <p>Drop AI technologies here</p>
+            {aiItems.map(item => <div key={item.id} className="tech-item">{item.name}</div>)}
           </div>
 
-          <div className="non-ai-category">
+          <div 
+            className="non-ai-category"
+            onDrop={(e) => onDrop(e, "Non-AI")}
+            onDragOver={onDragOver}
+          >
             <h3>Non-AI</h3>
             <p>Drop non-AI technologies here</p>
+            {nonAiItems.map(item => <div key={item.id} className="tech-item">{item.name}</div>)}
           </div>
         </div>
       </div>

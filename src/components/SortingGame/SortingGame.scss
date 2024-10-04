@@ -1,36 +1,36 @@
 .sorting-game {
-    .game-area {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-  
-    .tech-item {
-      padding: 10px;
-      margin: 10px;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      width: 150px;
+  .game-area {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .tech-item {
+    padding: 10px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .tech-item:hover {
+    background-color: #e0e0e0;
+  }
+
+  .categories {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    .ai-category,
+    .non-ai-category {
+      padding: 20px;
+      border: 2px dashed #ccc;
+      width: 200px;
       text-align: center;
-      transition: background-color 0.3s ease;
-    }
-  
-    .tech-item:hover {
-      background-color: #e0e0e0;
-    }
-  
-    .categories {
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-  
-      .ai-category, .non-ai-category {
-        padding: 20px;
-        border: 2px dashed #ccc;
-        width: 200px;
-        text-align: center;
-      }
     }
   }
-  
+}
