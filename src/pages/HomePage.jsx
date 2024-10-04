@@ -5,6 +5,9 @@ const HomePage = () => {
         <main>
             <h1>AI Guardians</h1>
             <p>Ready to Play?</p>
+            <button>
+                <a href="/chapter1">Start Chapter 1</a>
+            </button>
         </main>
     )
 }
