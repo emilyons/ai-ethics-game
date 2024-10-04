@@ -4,29 +4,34 @@
 // Spot-the-difference game: Compare legitimate and phishing emails.
 // Point out phishing red flags (e.g., suspicious links, poor grammar).
 
-import React from 'react';
-import './PhishingGame.scss';
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./PhishingGame.scss";
 const PhishingGame = () => {
+  const [score, setScore] = useState(0);
+
+  const handlePhishing = (isPhishing) => {
+    if (isPhishing) {
+      setScore(score + 1);
+    }
+  };
+
   return (
     <div className="phishing-game">
-      <h2>Phishing Game</h2>
-      <p>Help Techville’s data stay safe by building strong passwords!</p>
-      <div className="game-interface">
-        <div className="vault">
-          <div className="lock"></div>
-        </div>
-        <div className="hacking-attempts">
-          <p>Hacking Attempts: 0</p>
-        </div>
+      <h2>Phishing Detective</h2>
+      <p>Can you spot the phishing attempt? Compare the two emails below.</p>
+      <div>
+        <button onClick={() => handlePhishing(true)}>Spot Phishing</button>
+        <button onClick={() => handlePhishing(false)}>Not Phishing</button>
       </div>
-      <p>Now, let’s try hacking some passwords!</p>
-      <Link to="/chapter2/hacking-practice">
-        <button>Try Hacking Passwords</button>
-      </Link>
+      <p>Score: {score}</p>
+      {score >= 1 && (
+        <Link to="/chapter2/final-quiz">
+          <button>Proceed to Final Quiz</button>
+        </Link>
+      )}
     </div>
   );
 };
 
 export default PhishingGame;
-    

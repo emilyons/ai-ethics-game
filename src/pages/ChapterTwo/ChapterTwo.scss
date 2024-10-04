@@ -1,0 +1,36 @@
+.chapter-page {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 900px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  
+    h2 {
+      color: #4a90e2;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+  
+    button {
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #357ABD;
+      }
+    }
+  }
+  

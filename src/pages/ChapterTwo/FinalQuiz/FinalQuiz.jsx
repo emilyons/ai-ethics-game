@@ -4,14 +4,30 @@
 // Quiz: Series of questions on data protection (e.g., phishing, encryption, password rules).
 // Feedback: Players receive a Data Privacy Guardian Certificate upon completing the quiz.
 
-import React from 'react';
-import './FinalQuiz.scss';
+import React, { useState } from "react";
+import "./FinalQuiz.scss";
 
 const FinalQuiz = () => {
+  const [score, setScore] = useState(0);
+
+  const handleAnswer = (isCorrect) => {
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+  };
+
   return (
     <div className="final-quiz">
-        </div>
-    );
+      <h2>Final Quiz: Data Privacy Guardian</h2>
+      <p>Answer the questions to complete your training as a Data Privacy Guardian!</p>
+      <div>
+        <button onClick={() => handleAnswer(true)}>Question 1: Correct Answer</button>
+        <button onClick={() => handleAnswer(false)}>Question 1: Wrong Answer</button>
+      </div>
+      <p>Score: {score}</p>
+      {score >= 3 && <p>Congratulations, Guardian! You've completed the mission!</p>}
+    </div>
+  );
 };
 
 export default FinalQuiz;

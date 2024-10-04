@@ -1,0 +1,33 @@
+.defender-game {
+    h2 {
+      color: #4a90e2;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+  
+    button {
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #219150;
+      }
+    }
+  
+    .score {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+  
