@@ -1,0 +1,16 @@
+.intro-page {
+    text-align: center;
+    background-color: #f0f8ff;
+    padding: 20px;
+    button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      border: none;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+  }
+  
