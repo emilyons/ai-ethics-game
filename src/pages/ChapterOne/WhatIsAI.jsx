@@ -3,7 +3,8 @@ import './WhatIsAI.scss';
 import { Link } from 'react-router-dom';
 
 // Page 2: What is AI?
-// Objective: Provide a simple definition of AI and introduce its core principles.
+// Objective: Provide a simple definition of AI and introduce its core principles, including that it mimics human intelligence.
+
 
 // Dialogue:
 
