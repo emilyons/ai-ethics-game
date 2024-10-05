@@ -5,6 +5,7 @@
 // Feedback: Players receive a Data Privacy Guardian Certificate upon completing the quiz.
 
 import React, { useState } from "react";
+// import { Link } from "react-router-dom";
 import "./FinalQuiz.scss";
 
 const FinalQuiz = () => {

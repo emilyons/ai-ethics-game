@@ -30,7 +30,7 @@ function App() {
         <Route path="resources" element={<ResourcesPage />} />
         <Route path="chapter1" element={<ChapterOne />} />
         <Route path="chapter2" element={<ChapterTwo />} />
-        <Route path="/chapter2" element={<DataDilemma />} />
+        <Route path="/chapter2/data-dilemma" element={<DataDilemma />} />
         <Route path="/chapter2/password-basics" element={<PasswordBasics />} />
         <Route path="/chapter2/build-password" element={<BuildPassword />} />
         <Route path="/chapter2/password-rules" element={<PasswordRules />} />

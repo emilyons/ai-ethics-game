@@ -7,6 +7,7 @@
 // Activity: Interactive simulation where players can try to hack passwords.
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './PasswordHackingSim.scss';
 
 const PasswordHackingSim = () => {

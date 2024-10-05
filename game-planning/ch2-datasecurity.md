@@ -133,18 +133,43 @@ Activity:
 
 A drag-and-drop game where players create strong passwords while defending against hackers trying to breach Techville’s vaults.
 Points for every strong password built in time.
-**Page 8: Encryption - Protecting Data in Code**
+**Page 8: The Encryption Enigma**
 
 **Dialogue:**
 
-Narrator: "Passwords protect vaults, but for extra security, Guardians use encryption to scramble data so hackers can’t read it."
+Guardian Leader: "Excellent work on mastering passwords, young Guardian! But hackers are getting smarter, and we need an extra layer of protection. It's time to learn about encryption!"
+
+Narrator: "Encryption is like a secret code that scrambles our data. Even if hackers break into a vault, they can't understand what they've stolen!"
 
 **Visuals/Actions:**
 
-Guardians explain encryption, showing data being scrambled into code.
-Activity:
+1. Show a visual of data being "scrambled" into unreadable code.
+2. Display a simple substitution cipher key (e.g., A=1, B=2, C=3, etc.)
 
-Encryption Puzzle: Solve a simple cipher to decrypt a message and protect Techville’s data.
+**Activity: The Techville Cipher Challenge**
+
+Narrator: "A hacker has intercepted a crucial message about Techville's defenses. We need you to decrypt it using our special Guardian Cipher!"
+
+1. Present a short encrypted message using the substitution cipher.
+2. Provide an interactive decryption tool where kids can input letters to reveal the hidden message.
+3. As they decrypt, show a progress bar filling up, representing the "data protection level" of Techville.
+
+**Example:**
+Encrypted message: "16-18-15-20-5-3-20 20-8-5 22-1-21-12-20-19"
+Decrypted message: "PROTECT THE VAULTS"
+
+**Dialogue:**
+
+Guardian Leader: "Outstanding work, Guardian! You've successfully decrypted the message and strengthened Techville's defenses. Remember, encryption is a powerful tool that keeps our data safe, even if it falls into the wrong hands."
+
+Narrator: "Now that you understand encryption, let's see how it works together with strong passwords to create an unbreakable defense!"
+
+**Mini-Game: Encrypt Your Own Message**
+
+Allow players to input a short message and encrypt it using the Guardian Cipher. They can then challenge a friend or family member to decrypt it, reinforcing the concept of encryption in a fun, interactive way.
+
+**Affirmation:**
+"I am a master of codes, protecting important information with the power of encryption!"
 **Page 9: Recognizing Phishing (Phishing Detective Game)**
 
 **Dialogue:**
@@ -166,3 +191,6 @@ Narrator: "Congratulations, Guardian! You’ve defended Techville’s data by ma
 
 Final quiz to reinforce key lessons (password strength, encryption, phishing).
 Player earns a Data Privacy Guardian certificate to mark their achievement.
+
+
+----

@@ -6,6 +6,7 @@
 // Activity: Interactive checklist where players review passwords and mark whether they follow each rule.
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './PasswordRules.scss';
 
 const PasswordRules = () => {

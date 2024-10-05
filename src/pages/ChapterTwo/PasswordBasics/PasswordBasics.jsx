@@ -11,7 +11,7 @@ const PasswordBasics = () => {
       <p>To build a strong password, use letters, numbers, and symbols. The longer, the better!</p>
       
       <Link to="/chapter2/build-password">
-        <button>Start Building Passwords</button>
+        <button>Next: Build a Strong Password</button>
       </Link>
     </div>
   );
