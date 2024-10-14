@@ -1,57 +1,88 @@
-// PasswordRules.jsx (Page 4: What Makes a Password Strong)
-// Purpose: Teach the specific rules that make a password strong.
-// Content:
-// Recap the password guidelines (8 characters, mix of letters/numbers/symbols, no personal info).
-// Visual Aid: Examples of good and bad passwords.
-// Activity: Interactive checklist where players review passwords and mark whether they follow each rule.
-
-import React from 'react';
+// PasswordRules.jsx
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import './PasswordRules.scss';
 
+const passwordExamples = [
+  { example: 'password123', reason: 'Too simple and easy to guess.', followsRules: false },
+  { example: 'Str0ngP@ssw0rd!', reason: 'Great mix of letters, numbers, and symbols.', followsRules: true },
+  { example: 'qwerty', reason: 'Common and easy to guess.', followsRules: false },
+  { example: '🐉DragonKnight42!', reason: 'Strong, memorable, and uses symbols!', followsRules: true },
+];
+
+const mentorDialog = [
+  "Greetings, Guardian-in-training! As you prepare to defend the digital realm, you need to learn the art of crafting strong passwords.",
+  "Passwords like 'admin' or '123456' might seem clever, but hackers have seen them all before. They’re too easy to crack!",
+  "And yes, really long phrases can be strong, but let’s master these basics first to become a true Guardian!",
+];
+
 const PasswordRules = () => {
+  const [feedback, setFeedback] = useState({});
+  const [dialogIndex, setDialogIndex] = useState(0);
+
+  const handleEvaluatePassword = (index) => {
+    const example = passwordExamples[index];
+    setFeedback({
+      index,
+      message: example.followsRules
+        ? `✅ Great! "${example.example}" is strong!`
+        : `❌ Oops! "${example.example}" is weak. Reason: ${example.reason}`,
+      isStrong: example.followsRules,
+    });
+  };
+
+  const nextDialog = () => {
+    setDialogIndex((prevIndex) => (prevIndex + 1) % mentorDialog.length);
+  };
+
   return (
     <div className="password-rules">
-      <h2>What Makes a Password Strong</h2>
-      <p>To make a strong password, follow these rules:</p>
-      <ul>
-        <li>Use 8 or more characters</li>
-        <li>Mix letters, numbers, and symbols</li>
-        <li>Avoid using personal information</li>
-      </ul>
-      <p>Let’s practice with some examples!</p>
-      <div className="password-examples">
-        
-        <div className="password-example">
-          <p>Bad Password:</p>
-          <p>password123</p>
-          <p>Reason: Too short</p>
-        </div>
-        <div className="password-example">
-          <p>Good Password:</p>
-          <p>Str0ngP@ssw0rd!</p>
-          <p>Reason: Mix of letters, numbers, and symbols</p>
-        </div>
+      {/* Mentor Dialog Section */}
+      <div className="mentor-dialog">
+        <p>{mentorDialog[dialogIndex]}</p>
+        <button onClick={nextDialog}>Next</button>
       </div>
 
       <h2>What Makes a Password Strong?</h2>
-      <p>As a Guardian, your password needs to follow these rules:</p>
-      <ul>
-        <li>At least 8 characters.</li>
-        <li>A mix of letters, numbers, and symbols.</li>
-        <li>No personal info (like your name or birthday).</li>
-        <li>Use different passwords for different accounts.</li>
+      <p>To become a Guardian, make sure your passwords follow these rules:</p>
+      <ul className="rules-list">
+        <li>✅ Use 8 or more characters</li>
+        <li>🔢 Mix letters, numbers, and symbols</li>
+        <li>❌ Avoid using personal information</li>
+        <li>🔐 Use different passwords for different accounts</li>
       </ul>
-      <h3>Examples:</h3>
-      <div>
-        <strong>Weak Password:</strong> <code>dog123</code> <br />
-        <strong>Strong Password:</strong> <code>FluffyDragon!45</code>
+
+      <h3>Interactive Password Examples</h3>
+      <div className="password-examples">
+        {passwordExamples.map((example, index) => (
+          <div
+            key={index}
+            className={`password-card ${
+              feedback.index === index ? (feedback.isStrong ? 'strong' : 'weak') : ''
+            }`}
+          >
+            <p>
+              <strong>Password:</strong> <code>{example.example}</code>
+            </p>
+            <button onClick={() => handleEvaluatePassword(index)}>
+              Evaluate Password
+            </button>
+            {feedback.index === index && (
+              <div className="feedback">
+                {feedback.isStrong ? <FaCheckCircle /> : <FaTimesCircle />}
+                <span>{feedback.message}</span>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
+
       <Link to="/chapter2/password-hacking">
-        <button>Simulate Password Hacking</button>
+        <button className="cta-button">Simulate Password Hacking</button>
       </Link>
     </div>
   );
 };
 
-export default PasswordRules
+export default PasswordRules;
