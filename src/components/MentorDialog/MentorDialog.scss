@@ -1,45 +1,60 @@
-@import '../../styles/partials/variables';
-@import '../../styles/partials/fonts';
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
 
-.mentor-dialog {
-  background-color: rgba($secondary5, 0.9); // Bright purple for visibility
-    color: $primary4; // White text
-    padding: $pad-m;
-    border-radius: 10px;
-    margin-bottom: $pad-m;
-    font-family: 'Lato', sans-serif;
-    box-shadow: 0 2px 8px rgba($neutral, 0.2);
-    animation: fadeIn 0.5s ease-in-out;
-  
-    p {
-      font-size: 1.2rem;
-      margin-bottom: $pad-s;
+.mentor-widget {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  .mentor-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
     }
-  
-    button {
-      background-color: $primary2;
+  }
+
+  .mentor-dialog {
+    background-color: rgba($primary4, 0.9);
+    color: $primary1;
+    padding: 12px;
+    border-radius: 8px;
+    max-width: 250px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    .mentor-button {
+      background-color: $secondary4;
       color: $primary4;
       border: none;
-      border-radius: 5px;
       padding: 8px 12px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s;
-  
+      transition: background-color 0.3s ease;
+
       &:hover {
-        background-color: $secondary3;
+        background-color: $primary2;
       }
     }
   }
-  
-  /* Fade-in Animation */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+  &.collapsed {
+    .mentor-dialog {
+      display: none;
     }
   }
-  
+}
