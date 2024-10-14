@@ -1,28 +1,45 @@
-// PasswordRules.jsx
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
-import './PasswordRules.scss';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaCheckCircle, FaKey, FaTimesCircle, FaLock } from "react-icons/fa";
+import MentorDialog from "../../../components/MentorDialog/MentorDialog";
+import "./PasswordRules.scss";
 
 const passwordExamples = [
-  { example: 'password123', reason: 'Too simple and easy to guess.', followsRules: false },
-  { example: 'Str0ngP@ssw0rd!', reason: 'Great mix of letters, numbers, and symbols.', followsRules: true },
-  { example: 'qwerty', reason: 'Common and easy to guess.', followsRules: false },
-  { example: '🐉DragonKnight42!', reason: 'Strong, memorable, and uses symbols!', followsRules: true },
-];
-
-const mentorDialog = [
-  "Greetings, Guardian-in-training! As you prepare to defend the digital realm, you need to learn the art of crafting strong passwords.",
-  "Passwords like 'admin' or '123456' might seem clever, but hackers have seen them all before. They’re too easy to crack!",
-  "And yes, really long phrases can be strong, but let’s master these basics first to become a true Guardian!",
+  {
+    example: "password123",
+    reason: "Too simple and easy to guess.",
+    followsRules: false,
+  },
+  {
+    example: "Str0ngP@ssw0rd!",
+    reason: "Great mix of letters, numbers, and symbols.",
+    followsRules: true,
+  },
+  {
+    example: "qwerty",
+    reason: "Common and easy to guess.",
+    followsRules: false,
+  },
+  {
+    example: "🐉DragonKnight42!",
+    reason: "Strong, memorable, and uses symbols!",
+    followsRules: true,
+  },
 ];
 
 const PasswordRules = () => {
   const [feedback, setFeedback] = useState({});
-  const [dialogIndex, setDialogIndex] = useState(0);
+  const [mentorCompleted, setMentorCompleted] = useState(false);
+  const [evaluations, setEvaluations] = useState(
+    new Array(passwordExamples.length).fill(false)
+  );
 
   const handleEvaluatePassword = (index) => {
     const example = passwordExamples[index];
+    const newEvaluations = [...evaluations];
+    newEvaluations[index] = true; // Mark this password as evaluated
+    setEvaluations(newEvaluations);
+
     setFeedback({
       index,
       message: example.followsRules
@@ -32,25 +49,33 @@ const PasswordRules = () => {
     });
   };
 
-  const nextDialog = () => {
-    setDialogIndex((prevIndex) => (prevIndex + 1) % mentorDialog.length);
-  };
+  const allPasswordsEvaluated = evaluations.every((evaluated) => evaluated);
 
   return (
     <div className="password-rules">
-      {/* Mentor Dialog Section */}
-      <div className="mentor-dialog">
-        <p>{mentorDialog[dialogIndex]}</p>
-        <button onClick={nextDialog}>Next</button>
-      </div>
+      {/* Render Mentor Dialog */}
+      <MentorDialog onComplete={() => setMentorCompleted(true)} />
 
       <h2>What Makes a Password Strong?</h2>
       <p>To become a Guardian, make sure your passwords follow these rules:</p>
+
       <ul className="rules-list">
-        <li>✅ Use 8 or more characters</li>
-        <li>🔢 Mix letters, numbers, and symbols</li>
-        <li>❌ Avoid using personal information</li>
-        <li>🔐 Use different passwords for different accounts</li>
+        <li>
+          <FaCheckCircle style={{ color: "green" }} />
+          <span>Use 8 or more characters</span>
+        </li>
+        <li>
+          <FaKey style={{ color: "blue" }} />
+          <span>Mix letters, numbers, and symbols</span>
+        </li>
+        <li>
+          <FaTimesCircle style={{ color: "red" }} />
+          <span>Avoid using personal information</span>
+        </li>
+        <li>
+          <FaLock style={{ color: "goldenrod" }} />
+          <span>Use different passwords for different accounts</span>
+        </li>
       </ul>
 
       <h3>Interactive Password Examples</h3>
@@ -59,7 +84,11 @@ const PasswordRules = () => {
           <div
             key={index}
             className={`password-card ${
-              feedback.index === index ? (feedback.isStrong ? 'strong' : 'weak') : ''
+              feedback.index === index
+                ? feedback.isStrong
+                  ? "strong"
+                  : "weak"
+                : ""
             }`}
           >
             <p>
@@ -78,9 +107,11 @@ const PasswordRules = () => {
         ))}
       </div>
 
-      <Link to="/chapter2/password-hacking">
-        <button className="cta-button">Simulate Password Hacking</button>
-      </Link>
+      {mentorCompleted && allPasswordsEvaluated && (
+        <Link to="/chapter2/password-hacking">
+          <button className="cta-button">Simulate Password Hacking</button>
+        </Link>
+      )}
     </div>
   );
 };

@@ -1,0 +1,45 @@
+@import '../../styles/partials/variables';
+@import '../../styles/partials/fonts';
+
+.mentor-dialog {
+  background-color: rgba($secondary5, 0.9); // Bright purple for visibility
+    color: $primary4; // White text
+    padding: $pad-m;
+    border-radius: 10px;
+    margin-bottom: $pad-m;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 0 2px 8px rgba($neutral, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+  
+    p {
+      font-size: 1.2rem;
+      margin-bottom: $pad-s;
+    }
+  
+    button {
+      background-color: $primary2;
+      color: $primary4;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: $secondary3;
+      }
+    }
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

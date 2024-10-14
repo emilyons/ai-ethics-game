@@ -1,4 +1,5 @@
-// MentorDialog.jsx
+
+
 import React, { useState } from 'react';
 import './MentorDialog.scss';
 
@@ -8,19 +9,30 @@ const mentorDialog = [
   "And yes, long and unique phrases are strong, but let's focus on these basics first to defend Techville!"
 ];
 
-const MentorDialog = () => {
+const MentorDialog = ({ onComplete }) => {
   const [dialogIndex, setDialogIndex] = useState(0);
 
   const nextDialog = () => {
-    setDialogIndex((prevIndex) => (prevIndex + 1) % mentorDialog.length);
+    const newIndex = dialogIndex + 1;
+    if (newIndex < mentorDialog.length) {
+      setDialogIndex(newIndex);
+    } else {
+      onComplete(); // Signal that mentor dialog is completed
+    }
   };
 
   return (
     <div className="mentor-dialog">
       <p>{mentorDialog[dialogIndex]}</p>
-      <button onClick={nextDialog}>Next</button>
+      <button 
+        onClick={nextDialog} 
+        disabled={dialogIndex >= mentorDialog.length - 1} // Disable after last message
+      >
+        {dialogIndex < mentorDialog.length - 1 ? "Next" : "Completed"}
+      </button>
     </div>
   );
 };
 
 export default MentorDialog;
+
