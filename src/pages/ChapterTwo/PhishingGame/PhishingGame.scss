@@ -1,33 +1,95 @@
+@import "../../../styles/partials/variables";
+@import "../../../styles/partials/fonts";
+
 .phishing-game {
-    h2 {
-      color: #f39c12;
-      margin-bottom: 20px;
+  background-color: $primary4; // White background for readability
+  padding: $pad-l;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba($neutral, 0.2);
+
+  h2 {
+    color: $primary1; // Steel Sentinel - Primary text color
+    margin-bottom: $pad-s;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: $pad-s;
+    color: $secondary2; // Phoenix Ashes - Secondary text color
+    text-align: center;
+  }
+
+  .email-container {
+    background-color: $secondary4; // Alabaster - Light background for emails
+    padding: $pad-m;
+    border-radius: 8px;
+    margin: $pad-s 0;
+    box-shadow: 0 2px 4px rgba($neutral, 0.1);
+
+    h3 {
+      color: $primary3; // Cobalt Circuit - Active dividers/form text
+      margin-bottom: $pad-s;
+      font-weight: 600;
     }
-  
+
     p {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      font-size: 1rem;
+      margin-bottom: $pad-s;
     }
-  
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: $pad-s;
+
     button {
-      padding: 10px 20px;
+      padding: 12px 24px;
       font-size: 1.1rem;
-      background-color: #f39c12;
-      color: white;
+      background-color: $primary2; // Quantum Pulse - Main CTA color
+      color: $primary4; // White - CTA text color
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-  
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
       &:hover {
-        background-color: #e67e22;
+        background-color: $secondary3; // Neon Knight - Hover color
+        transform: scale(1.05);  // Slight pop effect on hover
+      }
+
+      &:active {
+        background-color: $secondary4; // Vibrant Viper - Active color
       }
     }
-  
-    .score {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      font-weight: bold;
+  }
+
+  .score {
+    margin-top: $pad-m;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $primary3; // Cobalt Circuit - Accent text
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+
+    button {
+      margin-top: $pad-s;
+      background-color: $secondary5; // Plasma Surge - Highlight color
     }
   }
-  
+
+  @media (max-width: map-get($breakpoints, "tablet")) {
+    .button-group {
+      flex-direction: column;
+      gap: $pad-s;
+
+      button {
+        width: 100%;  // Full width on smaller screens
+      }
+    }
+  }
+}
