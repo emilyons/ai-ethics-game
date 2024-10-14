@@ -5,11 +5,12 @@ import MentorDialog from "../../../components/MentorDialog/MentorDialog";
 import "./PasswordRules.scss";
 import { motion } from 'framer-motion';
 
+
 const passwordRules = [
-  { icon: <FaShieldAlt style={{ color: "green" }} />, text: "Use 8 or more characters" },
-  { icon: <FaRobot style={{ color: "blue" }} />, text: "Mix letters, numbers, and symbols" },
-  { icon: <FaTimesCircle style={{ color: "red" }} />, text: "Avoid using personal information" },
-  { icon: <FaLock style={{ color: "goldenrod" }} />, text: "Use different passwords for different accounts" },
+  { icon: <FaShieldAlt style={{ color: "$secondary5", fontSize: "2rem" }} />, text: "Use 8 or more characters" },
+  { icon: <FaRobot style={{ color: "$primary2", fontSize: "2rem" }} />, text: "Mix letters, numbers, and symbols" },
+  { icon: <FaTimesCircle style={{ color: "$secondary6", fontSize: "2rem" }} />, text: "Avoid using personal information" },
+  { icon: <FaLock style={{ color: "$secondary3", fontSize: "2rem" }} />, text: "Use different passwords for different accounts" },
 ];
 
 const passwordExamples = [
