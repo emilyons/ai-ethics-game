@@ -67,18 +67,20 @@ const PasswordRules = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <p><strong>Password:</strong> <code>{example.example}</code></p>
-            {!evaluations[index] && (
+            {!evaluations[index] ? (
               <button 
                 onClick={() => handleEvaluatePassword(index)}
                 className="evaluate-button"
               >
                 Evaluate Password
               </button>
-            )}
-            {feedback.index === index && (
-              <div className="feedback">
-                {feedback.isStrong ? <FaCheckCircle /> : <FaTimesCircle />}
-                <span>{feedback.message}</span>
+            ) : (
+              <div className="feedback subdued">
+                {example.followsRules ? <FaCheckCircle /> : <FaTimesCircle />}
+                <span>{example.followsRules 
+                  ? `Great! "${example.example}" is strong!`
+                  : `Oops! "${example.example}" is weak. Here's why: ${example.reason}`}
+                </span>
               </div>
             )}
           </motion.div>
