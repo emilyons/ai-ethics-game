@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaCheckCircle, FaKey, FaTimesCircle, FaLock } from "react-icons/fa";
+import { FaCheckCircle, FaKey, FaTimesCircle, FaLock, FaShieldAlt, FaRobot } from "react-icons/fa";
 import MentorDialog from "../../../components/MentorDialog/MentorDialog";
 import "./PasswordRules.scss";
+import { motion } from 'framer-motion';
+
+const passwordRules = [
+  { icon: <FaShieldAlt style={{ color: "green" }} />, text: "Use 8 or more characters" },
+  { icon: <FaRobot style={{ color: "blue" }} />, text: "Mix letters, numbers, and symbols" },
+  { icon: <FaTimesCircle style={{ color: "red" }} />, text: "Avoid using personal information" },
+  { icon: <FaLock style={{ color: "goldenrod" }} />, text: "Use different passwords for different accounts" },
+];
 
 const passwordExamples = [
   { example: "password123", reason: "Too simple and easy to guess.", followsRules: false },
@@ -26,7 +34,7 @@ const PasswordRules = () => {
       index,
       message: example.followsRules
         ? `✅ Great! "${example.example}" is strong!`
-        : `❌ Oops! "${example.example}" is weak. Reason: ${example.reason}`,
+        : `❌ Oops! "${example.example}" is weak. Here's why: ${example.reason}`,
       isStrong: example.followsRules,
     });
   };
@@ -38,22 +46,32 @@ const PasswordRules = () => {
       <MentorDialog onComplete={() => setMentorCompleted(true)} />
 
       <h2>What Makes a Password Strong?</h2>
-      <p>To become a Guardian, make sure your passwords follow these rules:</p>
+      <p>Guardians are required to have strong passwords. Make sure your passwords follow these rules:</p>
 
       <ul className="rules-list">
-        <li><FaCheckCircle style={{ color: "green" }} /> Use 8 or more characters</li>
-        <li><FaKey style={{ color: "blue" }} /> Mix letters, numbers, and symbols</li>
-        <li><FaTimesCircle style={{ color: "red" }} /> Avoid using personal information</li>
-        <li><FaLock style={{ color: "goldenrod" }} /> Use different passwords for different accounts</li>
+        {passwordRules.map((rule, index) => (
+          <li key={index} className="rule-panel">
+            {rule.icon} {rule.text}
+          </li>
+        ))}
       </ul>
 
       <h3>Let's See This in Action!</h3>
       <div className="password-examples">
         {passwordExamples.map((example, index) => (
-          <div key={index} className={`password-card ${evaluations[index] ? "evaluated" : ""}`}>
+          <motion.div 
+            key={index} 
+            className={`password-card ${evaluations[index] ? "evaluated" : ""}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
             <p><strong>Password:</strong> <code>{example.example}</code></p>
             {!evaluations[index] && (
-              <button onClick={() => handleEvaluatePassword(index)}>
+              <button 
+                onClick={() => handleEvaluatePassword(index)}
+                className="evaluate-button"
+              >
                 Evaluate Password
               </button>
             )}
@@ -63,16 +81,22 @@ const PasswordRules = () => {
                 <span>{feedback.message}</span>
               </div>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
 
       <div className="progress-tracker">
         <div className={`progress-item ${mentorCompleted ? "completed" : ""}`}>
-          <FaCheckCircle /> Mentor Dialog Completed
+          {mentorCompleted ? <FaCheckCircle /> : null} Learn from Sage
         </div>
         <div className={`progress-item ${allPasswordsEvaluated ? "completed" : ""}`}>
-          <FaCheckCircle /> All Passwords Evaluated
+          {allPasswordsEvaluated ? (
+            <>
+              <FaCheckCircle /> All Passwords Evaluated
+            </>
+          ) : (
+            "Evaluate Passwords"
+          )}
         </div>
 
         {mentorCompleted && allPasswordsEvaluated ? (
