@@ -3,54 +3,82 @@ import "./DataTraining.scss";
 import { Link } from "react-router-dom";
 
 const DataTraining = () => {
-  const [dataAmount, setDataAmount] = useState(0);
-  const [accuracy, setAccuracy] = useState(0);
-  const [prediction, setPrediction] = useState("");
+  const [trainedMovies, setTrainedMovies] = useState([]);
+  const [aiAccuracy, setAiAccuracy] = useState(0);
+  const [aiPrediction, setAiPrediction] = useState("");
+  const [feedbackMessage, setFeedbackMessage] = useState("");
 
   const movies = [
-    "Action Movie", "Romantic Comedy", "Sci-Fi Thriller", 
-    "Historical Drama", "Animated Adventure"
+    { title: "Toy Story", genre: "Animation" },
+    { title: "The Lion King", genre: "Animation" },
+    { title: "Harry Potter", genre: "Fantasy" },
+    { title: "Spy Kids", genre: "Action" },
+    { title: "E.T.", genre: "Sci-Fi" },
+    { title: "Home Alone", genre: "Comedy" },
+    { title: "The Goonies", genre: "Adventure" },
+    { title: "The Neverending Story", genre: "Fantasy" },
+    { title: "Frozen", genre: "Animation" },
+    { title: "Jumanji", genre: "Adventure" },
   ];
 
-  useEffect(() => {
-    setAccuracy(Math.min(dataAmount * 2, 100));
-    if (dataAmount >= 50) {
-      setPrediction(movies[Math.floor(Math.random() * movies.length)]);
-    } else {
-      setPrediction("");
+  const handleMovieSelection = (movie) => {
+    setTrainedMovies([...trainedMovies, movie]);
+    updateAiAccuracy();
+    if (trainedMovies.length >= 4) {
+      makePrediction();
     }
-  }, [dataAmount]);
+  };
 
-  const handleSliderChange = (e) => {
-    setDataAmount(parseInt(e.target.value));
+  const updateAiAccuracy = () => {
+    const newAccuracy = Math.min((trainedMovies.length + 1) * 10, 100);
+    setAiAccuracy(newAccuracy);
+  };
+
+  const makePrediction = () => {
+    const genres = trainedMovies.map(movie => movie.genre);
+    const mostCommonGenre = genres.sort((a,b) =>
+      genres.filter(v => v===a).length - genres.filter(v => v===b).length
+    ).pop();
+    setAiPrediction(mostCommonGenre);
+    setFeedbackMessage(`I think you like ${mostCommonGenre} movies!`);
   };
 
   return (
     <div className="data-training">
-      <h1>Data Training</h1>
-      <p>
-        To help AI learn, it needs lots of data. The more data it gets, 
-        the better it becomes at predicting things, like what movie you'll enjoy next!
-      </p>
+      <h1>Train Your Movie AI</h1>
+      <p>Help the AI learn about your movie preferences! Select movies you like to train it.</p>
 
-      <div className="ai-simulation">
-        <h2>AI Movie Recommendation Simulator</h2>
-        <input 
-          type="range" 
-          min="0" 
-          max="100" 
-          value={dataAmount} 
-          onChange={handleSliderChange}
-        />
-        <p>Data Amount: {dataAmount}%</p>
-        <p>Prediction Accuracy: {accuracy}%</p>
-        {prediction && <p>Recommended Movie: {prediction}</p>}
+      <div className="ai-character">
+        {/* Add an animated AI character here */}
       </div>
+
+      <div className="movie-selection">
+        {movies.map((movie, index) => (
+          <button 
+            key={index} 
+            onClick={() => handleMovieSelection(movie)}
+            disabled={trainedMovies.includes(movie)}
+          >
+            {movie.title}
+          </button>
+        ))}
+      </div>
+
+      <div className="ai-progress">
+        <p>AI Accuracy: {aiAccuracy}%</p>
+        <div className="progress-bar" style={{width: `${aiAccuracy}%`}}></div>
+      </div>
+
+      {feedbackMessage && (
+        <div className="ai-feedback">
+          <p>{feedbackMessage}</p>
+        </div>
+      )}
 
       <div className="explanation">
         <p>
-          As you increase the amount of data, notice how the AI's prediction accuracy improves. 
-          With more data about your movie preferences, the AI can make better recommendations!
+          As you select more movies, the AI learns your preferences. 
+          It uses this data to make better predictions about what movies you might like!
         </p>
       </div>
 

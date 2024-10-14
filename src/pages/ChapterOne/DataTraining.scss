@@ -91,4 +91,52 @@
       background-color: darken($primary2, 10%);
     }
   }
+
+  .movie-selection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    button {
+      padding: 10px;
+      background-color: $color4;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($color4, 10%);
+      }
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .ai-progress {
+    margin-bottom: 20px;
+
+    .progress-bar {
+      height: 20px;
+      background-color: $primary1;
+      transition: width 0.5s ease-in-out;
+    }
+  }
+
+  .ai-feedback {
+    background-color: $color1;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+
+    p {
+      color: white;
+      font-weight: bold;
+    }
+  }
 }
