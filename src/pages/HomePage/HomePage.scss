@@ -1,12 +1,16 @@
-@import '../../styles/partials/variables';
-@import '../../styles/partials/fonts';
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
 
 .homepage {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 100vh;
   background: linear-gradient(135deg, $color1, $color3);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  padding-bottom: 300px; // Adjust if needed based on the new sizes
 
   &__content {
     text-align: center;
@@ -14,12 +18,27 @@
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; // Ensure this is set for absolute positioning of the robot
+    z-index: 2;
+    max-width: 80%;
+    margin: 200px auto 50px;
+  }
+
+  &__robot-image {
+    position: absolute;
+    top: -192px; // Adjusted this value to move the robot up
+    left: 20%;
+    transform: translateX(-50%);
+    max-width: 250px;
+    height: auto;
+    z-index: 3;
   }
 
   &__title {
     font-size: 3rem;
     color: $primary2;
     margin-bottom: 1rem;
+    margin-top: 100px;
   }
 
   &__description {
@@ -51,6 +70,101 @@
       text-decoration: none;
       font-size: 1.2rem;
       font-weight: bold;
+    }
+  }
+
+  &__leo,
+  &__zoey {
+    position: fixed;
+    bottom: 0;
+    max-width: 300px; // Increased size to match the robot
+    height: auto;
+  }
+
+  &__leo {
+    right: 0;
+  }
+
+  &__zoey {
+    left: 0;
+  }
+
+  @media (max-width: 1200px) {
+    &__leo,
+    &__zoey,
+    &__robot-image {
+      max-width: 200px;
+    }
+
+    &__robot-image {
+      max-width: 150px;
+      top: -100px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    padding-bottom: 200px;
+
+    &__content {
+      max-width: 90%;
+      margin: 180px auto 30px; // Increased top margin to accommodate larger robot
+    }
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__description {
+      font-size: 1rem;
+    }
+
+    &__cta {
+      font-size: 1.2rem;
+    }
+
+    &__leo,
+    &__zoey,
+    &__robot-image {
+      max-width: 150px;
+    }
+
+    &__robot-image {
+      max-width: 150px;
+      top: -140px; // Adjusted for smaller screens
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding-bottom: 150px;
+
+    &__content {
+      max-width: 95%;
+      padding: 1rem;
+      margin: 150px auto 20px; // Adjusted for smaller robot
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__description {
+      font-size: 0.9rem;
+    }
+
+    &__cta {
+      font-size: 1rem;
+    }
+
+    &__leo,
+    &__zoey,
+    &__robot-image {
+      max-width: 120px;
+    }
+
+    &__robot-image {
+      max-width: 120px;
+      top: -110px; // Adjusted for even smaller screens
     }
   }
 }
