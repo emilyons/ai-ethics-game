@@ -1,3 +1,6 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
+
 .pattern-recognition {
   text-align: center;
   padding: 20px;
@@ -32,5 +35,21 @@
     font-size: 1.2rem;
     margin-top: 15px;
     color: green;
+  }
+}
+
+.next-lesson-btn {
+  display: inline-block;
+  background-color: $primary2;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 2rem;
+
+  &:hover {
+    background-color: darken($primary2, 10%);
   }
 }

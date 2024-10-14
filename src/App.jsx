@@ -38,15 +38,15 @@ function App() {
         <Route path="about" element={<AboutPage />} />
         <Route path="resources" element={<ResourcesPage />} />
        
-        <Route path="chapter1" element={<ChapterOne />} />
-        <Route path="chapter1/intro" element={<IntroPage />} />
-        <Route path="chapter1/what-is-ai" element={<WhatIsAI />} />
-        <Route path="chapter1/ai-in-everyday-life" element={<AIInEverydayLife />} />
-        <Route path="chapter1/machine-learning" element={<MachineLearning />} />
-        <Route path="chapter1/sorting-game" element={<SortingGame />} />
-        <Route path="chapter1/data-training" element={<DataTraining />} />
-        <Route path="chapter1/pattern-recognition" element={<PatternRecognition />} />
-        <Route path="chapter1/mission-complete" element={<MissionComplete />} />
+        <Route path="/chapter1" element={<ChapterOne />} />
+        <Route path="/chapter1/intro" element={<IntroPage />} />
+        <Route path="/chapter1/what-is-ai" element={<WhatIsAI />} />
+        <Route path="/chapter1/ai-in-everyday-life" element={<AIInEverydayLife />} />
+        <Route path="/chapter1/machine-learning" element={<MachineLearning />} />
+        <Route path="/chapter1/sorting-game" element={<SortingGame />} />
+        <Route path="/chapter1/data-training" element={<DataTraining />} />
+        <Route path="/chapter1/pattern-recognition" element={<PatternRecognition />} />
+        <Route path="/chapter1/mission-complete" element={<MissionComplete />} />
        
        
         <Route path="chapter2" element={<ChapterTwo />} />

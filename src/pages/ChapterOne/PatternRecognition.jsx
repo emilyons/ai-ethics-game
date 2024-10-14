@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './PatternRecognition.scss';
 
 const faceImages = [
@@ -41,6 +42,9 @@ const PatternRecognition = () => {
         ))}
       </div>
       {feedback && <p className="feedback">{feedback}</p>}
+      <Link to="/chapter1" className="next-lesson-btn">
+        Complete Chapter One
+      </Link>
     </div>
   );
 };
