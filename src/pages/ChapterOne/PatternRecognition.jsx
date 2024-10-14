@@ -42,7 +42,7 @@ const PatternRecognition = () => {
         ))}
       </div>
       {feedback && <p className="feedback">{feedback}</p>}
-      <Link to="/chapter1" className="next-lesson-btn">
+      <Link to="/chapter1/mission-complete" className="next-lesson-btn">
         Complete Chapter One
       </Link>
     </div>
