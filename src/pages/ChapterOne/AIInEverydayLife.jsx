@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./AIInEverydayLife.scss";
 import { Link } from "react-router-dom";
 import MuseumMap from "../../components/MuseumMap/MuseumMap";
-import TourGuide from "../../components/TourGuide/TourGuide";
+import ProfessorAion from "../../components/ProfessorAion/ProfessorAion";
 
 // Room Data: Define the list of rooms with their AI elements
 const rooms = [
@@ -15,6 +15,7 @@ const rooms = [
 const AIInEverydayLife = () => {
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [visitedRooms, setVisitedRooms] = useState([]);
+  const [showAion, setShowAion] = useState(true);
 
   const handleRoomClick = (room) => {
     setSelectedRoom(room);
@@ -23,10 +24,15 @@ const AIInEverydayLife = () => {
     }
   };
 
+  const handleAionComplete = () => {
+    setShowAion(false);
+  };
+
   return (
     <div className="ai-everyday-life">
       <h1>Explore the Museum of AI!</h1>
-      <TourGuide message="Welcome to the AI Museum! Click on a room to learn about AI in everyday life." />
+      
+      {showAion && <ProfessorAion onComplete={handleAionComplete} />}
       
       <MuseumMap rooms={rooms} onRoomClick={handleRoomClick} visitedRooms={visitedRooms} />
 

@@ -1,0 +1,56 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
+
+.professor-aion {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  .professor-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .professor-dialog {
+    background-color: $color2;
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: calc(100% - 120px);
+
+    p {
+      color: $secondary1;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .professor-button {
+      background-color: $primary1;
+      color: $primary4;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+
+      &:hover {
+        background-color: darken($primary1, 10%);
+      }
+    }
+  }
+
+  &.collapsed {
+    .professor-dialog {
+      display: none;
+    }
+  }
+}

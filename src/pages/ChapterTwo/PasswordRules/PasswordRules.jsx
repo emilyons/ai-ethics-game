@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaCheckCircle, FaKey, FaTimesCircle, FaLock, FaShieldAlt, FaRobot } from "react-icons/fa";
-import MentorDialog from "../../../components/MentorDialog/MentorDialog";
+import MentorDialog from "../../../components/ProfessorAion/ProfessorAion";
 import "./PasswordRules.scss";
 import { motion } from 'framer-motion';
 
